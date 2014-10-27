@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sws="http://www.springframework.org/schema/web-services"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<!-- <context:component-scan base-package="com.tieto.weatherservice" /> -->
+	
+	<bean id="endpoint" class="com.tieto.weatherservice.WeatherEndpoint">
+		<property name="ws" ref="service"></property>
+	</bean>
+
+	<sws:annotation-driven />
+
+	<sws:dynamic-wsdl id="weather" portTypeName="WeatherProvider"
+		locationUri="/soap/">
+		<sws:xsd location="/WEB-INF/schema.xsd" />
+	</sws:dynamic-wsdl>
+
+	<oxm:jaxb2-marshaller id="marshaller"
+		contextPath="com.tieto.weatherservice" />
+		
+	<security:http auto-config='true'>
+		<security:intercept-url pattern="/**" access="ROLE_USER" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service id="userDetailsService" properties="users.properties" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>
