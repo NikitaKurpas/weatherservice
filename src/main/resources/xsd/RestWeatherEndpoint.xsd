@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://tieto.com/ws/schemas"
+        elementFormDefault="qualified">
+
+    <complexType name="RestWeatherResponse">
+        <sequence>
+            <element name="location" type="string"/>
+            <element name="timestamp" type="string"/>
+            <element name="tempCelsius" type="float"/>
+            <element name="humidity" type="string"/>
+            <element name="windSpeed_MPerS" type="int"/>
+            <element name="windDirection" type="string"/>
+            <element name="weatherDescription" type="string"/>
+            <element name="windDescription" type="string"/>
+        </sequence>
+    </complexType>
+
+</schema>

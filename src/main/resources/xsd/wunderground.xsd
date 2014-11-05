@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:float" name="version"/>
+                <xs:element type="xs:anyURI" name="termsofService"/>
+                <xs:element ref="features" minOccurs="0" />
+                <xs:element ref="current_observation" minOccurs="0" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="current_observation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="image" minOccurs="0" />
+                <xs:element ref="display_location" minOccurs="0" />
+                <xs:element ref="observation_location" minOccurs="0" />
+                <xs:element type="xs:string" name="estimated"/>
+                <xs:element type="xs:string" name="station_id"/>
+                <xs:element type="xs:string" name="observation_time"/>
+                <xs:element type="xs:string" name="observation_time_rfc822"/>
+                <xs:element type="xs:int" name="observation_epoch"/>
+                <xs:element type="xs:string" name="local_time_rfc822"/>
+                <xs:element type="xs:int" name="local_epoch"/>
+                <xs:element type="xs:string" name="local_tz_short"/>
+                <xs:element type="xs:string" name="local_tz_long"/>
+                <xs:element type="xs:short" name="local_tz_offset"/>
+                <xs:element type="xs:string" name="weather"/>
+                <xs:element type="xs:string" name="temperature_string"/>
+                <xs:element type="xs:float" name="temp_f"/>
+                <xs:element type="xs:float" name="temp_c"/>
+                <xs:element type="xs:string" name="relative_humidity"/>
+                <xs:element type="xs:string" name="wind_string"/>
+                <xs:element type="xs:string" name="wind_dir"/>
+                <xs:element type="xs:short" name="wind_degrees"/>
+                <xs:element type="xs:float" name="wind_mph"/>
+                <xs:element type="xs:byte" name="wind_gust_mph"/>
+                <xs:element type="xs:float" name="wind_kph"/>
+                <xs:element type="xs:byte" name="wind_gust_kph"/>
+                <xs:element type="xs:short" name="pressure_mb"/>
+                <xs:element type="xs:float" name="pressure_in"/>
+                <xs:element type="xs:byte" name="pressure_trend"/>
+                <xs:element type="xs:string" name="dewpoint_string"/>
+                <xs:element type="xs:byte" name="dewpoint_f"/>
+                <xs:element type="xs:byte" name="dewpoint_c"/>
+                <xs:element type="xs:string" name="heat_index_string"/>
+                <xs:element type="xs:string" name="heat_index_f"/>
+                <xs:element type="xs:string" name="heat_index_c"/>
+                <xs:element type="xs:string" name="windchill_string"/>
+                <xs:element type="xs:string" name="windchill_f"/>
+                <xs:element type="xs:string" name="windchill_c"/>
+                <xs:element type="xs:string" name="feelslike_string"/>
+                <xs:element type="xs:float" name="feelslike_f"/>
+                <xs:element type="xs:float" name="feelslike_c"/>
+                <xs:element type="xs:float" name="visibility_mi"/>
+                <xs:element type="xs:float" name="visibility_km"/>
+                <xs:element type="xs:string" name="solarradiation"/>
+                <xs:element type="xs:byte" name="UV"/>
+                <xs:element type="xs:string" name="precip_1hr_string"/>
+                <xs:element type="xs:float" name="precip_1hr_in"/>
+                <xs:element type="xs:float" name="precip_1hr_metric"/>
+                <xs:element type="xs:string" name="precip_today_string"/>
+                <xs:element type="xs:float" name="precip_today_in"/>
+                <xs:element type="xs:short" name="precip_today_metric"/>
+                <xs:element type="xs:string" name="icon"/>
+                <xs:element type="xs:anyURI" name="icon_url"/>
+                <xs:element type="xs:anyURI" name="forecast_url"/>
+                <xs:element type="xs:anyURI" name="history_url"/>
+                <xs:element type="xs:anyURI" name="ob_url"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="image">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:anyURI" name="url"/>
+                <xs:element type="xs:string" name="title"/>
+                <xs:element type="xs:anyURI" name="link"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="display_location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="full"/>
+                <xs:element type="xs:string" name="city"/>
+                <xs:element type="xs:string" name="state"/>
+                <xs:element type="xs:string" name="state_name"/>
+                <xs:element type="xs:string" name="country"/>
+                <xs:element type="xs:string" name="country_iso3166"/>
+                <xs:element type="xs:int" name="zip"/>
+                <xs:element type="xs:byte" name="magic"/>
+                <xs:element type="xs:int" name="wmo"/>
+                <xs:element type="xs:float" name="latitude"/>
+                <xs:element type="xs:float" name="longitude"/>
+                <xs:element type="xs:float" name="elevation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="observation_location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="full"/>
+                <xs:element type="xs:string" name="city"/>
+                <xs:element type="xs:string" name="state"/>
+                <xs:element type="xs:string" name="country"/>
+                <xs:element type="xs:string" name="country_iso3166"/>
+                <xs:element type="xs:float" name="latitude"/>
+                <xs:element type="xs:float" name="longitude"/>
+                <xs:element type="xs:string" name="elevation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="features">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="feature"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

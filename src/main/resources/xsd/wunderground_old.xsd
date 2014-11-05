@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="version" minOccurs="0" />
+				<xs:element ref="termsofService" minOccurs="0" />
+				<xs:element ref="features" minOccurs="0" />
+				<xs:element ref="current_observation" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="current_observation">
+		<xs:complexType>
+			<xs:sequence>
+
+				<xs:element ref="image" minOccurs="0" />
+				<xs:element ref="display_location" minOccurs="0" />
+				<xs:element ref="observation_location" minOccurs="0" />
+				<xs:element ref="estimated" minOccurs="0" />
+				<xs:element ref="station_id" minOccurs="0" />
+				<xs:element ref="observation_time" minOccurs="0" />
+				<xs:element ref="observation_time_rfc822" />
+				<xs:element ref="observation_epoch" minOccurs="0" />
+				<xs:element ref="local_time_rfc822" minOccurs="0" />
+				<xs:element ref="local_epoch" minOccurs="0" />
+				<xs:element ref="local_tz_short" minOccurs="0" />
+				<xs:element ref="local_tz_long" minOccurs="0" />
+				<xs:element ref="local_tz_offset" minOccurs="0" />
+				<xs:element ref="weather" minOccurs="0" />
+				<xs:element ref="temperature_string" minOccurs="0" />
+				<xs:element ref="temp_f" minOccurs="0" />
+				<xs:element ref="temp_c" minOccurs="0" />
+				<xs:element ref="relative_humidity" minOccurs="0" />
+				<xs:element ref="wind_string" minOccurs="0" />
+				<xs:element ref="wind_dir" minOccurs="0" />
+				<xs:element ref="wind_degrees" minOccurs="0" />
+				<xs:element ref="wind_mph" minOccurs="0" />
+				<xs:element ref="wind_gust_mph" minOccurs="0" />
+				<xs:element ref="wind_kph" minOccurs="0" />
+				<xs:element ref="wind_gust_kph" minOccurs="0" />
+				<xs:element ref="pressure_mb" minOccurs="0" />
+				<xs:element ref="pressure_in" minOccurs="0" />
+				<xs:element ref="pressure_trend" minOccurs="0" />
+				<xs:element ref="dewpoint_string" minOccurs="0" />
+				<xs:element ref="dewpoint_f" minOccurs="0" />
+				<xs:element ref="dewpoint_c" minOccurs="0" />
+				<xs:element ref="heat_index_string" minOccurs="0" />
+				<xs:element ref="heat_index_f" minOccurs="0" />
+				<xs:element ref="heat_index_c" minOccurs="0" />
+				<xs:element ref="windchill_string" minOccurs="0" />
+				<xs:element ref="windchill_f" minOccurs="0" />
+				<xs:element ref="windchill_c" minOccurs="0" />
+				<xs:element ref="feelslike_string" minOccurs="0" />
+				<xs:element ref="feelslike_f" minOccurs="0" />
+				<xs:element ref="feelslike_c" minOccurs="0" />
+				<xs:element ref="visibility_mi" minOccurs="0" />
+				<xs:element ref="visibility_km" minOccurs="0" />
+				<xs:element ref="solarradiation" minOccurs="0" />
+				<xs:element ref="UV" minOccurs="0" />
+				<xs:element ref="precip_1hr_string" minOccurs="0" />
+				<xs:element ref="precip_1hr_in" minOccurs="0" />
+				<xs:element ref="precip_1hr_metric" minOccurs="0" />
+				<xs:element ref="precip_today_string" minOccurs="0" />
+				<xs:element ref="precip_today_in" minOccurs="0" />
+				<xs:element ref="precip_today_metric" minOccurs="0" />
+				<xs:element ref="icon" minOccurs="0" />
+				<xs:element ref="icon_url" minOccurs="0" />
+				<xs:element ref="forecast_url" minOccurs="0" />
+				<xs:element ref="history_url" minOccurs="0" />
+				<xs:element ref="ob_url" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="observation_location">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="full" minOccurs="0" />
+				<xs:element ref="city" minOccurs="0" />
+				<xs:element ref="state" minOccurs="0" />
+				<xs:element ref="country" minOccurs="0" />
+				<xs:element ref="country_iso3166" minOccurs="0" />
+				<xs:element ref="latitude" minOccurs="0" />
+				<xs:element ref="longitude" minOccurs="0" />
+				<xs:element ref="elevation" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="full" type="xs:string" />
+	<xs:element name="feelslike_string" type="xs:string" />
+	<xs:element name="wind_string" type="xs:string" />
+	<xs:element name="termsofService" type="xs:string" />
+	<xs:element name="features">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="feature" type="xs:string" />
+	<xs:element name="version" type="xs:string" />
+	<xs:element name="image">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" />
+				<xs:element ref="title" minOccurs="0" />
+				<xs:element ref="link" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="display_location">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="full" minOccurs="0" />
+				<xs:element ref="city" minOccurs="0" />
+				<xs:element ref="state" minOccurs="0" />
+				<xs:element ref="state_name" minOccurs="0" />
+				<xs:element ref="country" minOccurs="0" />
+				<xs:element ref="country_iso3166" minOccurs="0" />
+				<xs:element ref="zip" minOccurs="0" />
+				<xs:element ref="magic" minOccurs="0" />
+				<xs:element ref="wmo" minOccurs="0" />
+				<xs:element ref="latitude" minOccurs="0" />
+				<xs:element ref="longitude" minOccurs="0" />
+				<xs:element ref="elevation" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="forecast" type="xs:string" />
+	<xs:element name="history_url" type="xs:string" />
+	<xs:element name="ob_url" type="xs:string" />
+	<xs:element name="url" type="xs:string" />
+	<xs:element name="title" type="xs:string" />
+	<xs:element name="link" type="xs:string" />
+	<xs:element name="estimated">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estimated" type="xs:string" minOccurs="0" />
+				<xs:element name="description" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="station_id" type="xs:string" />
+	<xs:element name="observation_time" type="xs:string" />
+	<xs:element name="observation_time_rfc822" type="xs:string" />
+	<xs:element name="observation_epoch" type="xs:string" />
+	<xs:element name="local_tz_short" type="xs:string" />
+	<xs:element name="local_tz_long" type="xs:string" />
+	<xs:element name="local_tz_offset" type="xs:string" />
+	<xs:element name="weather" type="xs:string" />
+	<xs:element name="temperature_string" type="xs:string" />
+	<xs:element name="temp_f" type="xs:string" />
+	<xs:element name="temp_c" type="xs:string" />
+	<xs:element name="relative_humidity" type="xs:string" />
+	<xs:element name="wind_dir" type="xs:string" />
+	<xs:element name="wind_degrees" type="xs:string" />
+	<xs:element name="wind_mph" type="xs:string" />
+	<xs:element name="wind_gust_mph" type="xs:string" />
+	<xs:element name="wind_kph" type="xs:string" />
+	<xs:element name="wind_gust_kph" type="xs:string" />
+	<xs:element name="pressure_mb" type="xs:string" />
+	<xs:element name="pressure_in" type="xs:string" />
+	<xs:element name="pressure_trend" type="xs:string" />
+	<xs:element name="dewpoint_string" type="xs:string" />
+	<xs:element name="dewpoint_f" type="xs:string" />
+	<xs:element name="dewpoint_c" type="xs:string" />
+	<xs:element name="heat_index_string" type="xs:string" />
+	<xs:element name="heat_index_f" type="xs:string" />
+	<xs:element name="heat_index_c" type="xs:string" />
+	<xs:element name="windchill_string" type="xs:string" />
+	<xs:element name="windchill_f" type="xs:string" />
+	<xs:element name="windchill_c" type="xs:string" />
+	<xs:element name="feelslike_f" type="xs:string" />
+	<xs:element name="feelslike_c" type="xs:string" />
+	<xs:element name="visibility_mi" type="xs:string" />
+	<xs:element name="visibility_km" type="xs:string" />
+	<xs:element name="solarradiation" type="xs:string" />
+	<xs:element name="UV" type="xs:string" />
+	<xs:element name="precip_1hr_string" type="xs:string" />
+	<xs:element name="precip_1hr_in" type="xs:string" />
+	<xs:element name="precip_1hr_metric" type="xs:string" />
+	<xs:element name="precip_today_string" type="xs:string" />
+	<xs:element name="precip_today_in" type="xs:string" />
+	<xs:element name="precip_today_metric" type="xs:string" />
+	<xs:element name="icon" type="xs:string" />
+	<xs:element name="icon_url" type="xs:string" />
+	<xs:element name="city" type="xs:string" />
+	<xs:element name="state" type="xs:string" />
+	<xs:element name="state_name" type="xs:string" />
+	<xs:element name="country" type="xs:string" />
+	<xs:element name="country_iso3166" type="xs:string" />
+	<xs:element name="zip" type="xs:string" />
+	<xs:element name="magic" type="xs:string" />
+	<xs:element name="wmo" type="xs:string" />
+	<xs:element name="latitude" type="xs:string" />
+	<xs:element name="longitude" type="xs:string" />
+	<xs:element name="elevation" type="xs:string" />
+	<xs:element name="local_time_rfc822" type="xs:string" />
+	<xs:element name="local_epoch" type="xs:string" />
+	<xs:element name="forecast_url" type="xs:string" />
+</xs:schema>

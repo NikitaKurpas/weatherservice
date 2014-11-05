@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cities>
+    <city>
+        <name>Ostrava</name>
+        <country>czechrepublic</country>
+    </city>
+    <city>
+        <name>Oslo</name>
+        <country>norway</country>
+    </city>
+    <city>
+        <name>Helsinki</name>
+        <country>finland</country>
+    </city>
+    <city>
+        <name>Stockholm</name>
+        <country>sweden</country>
+    </city>
+    <city>
+        <name>Vilnius</name>
+        <country>lithuania</country>
+    </city>
+</cities>
